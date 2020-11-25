@@ -25,6 +25,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
  Gender selectGender;
+ int sliderHeight=180;
 
   Widget build(BuildContext context){
     return Scaffold(
@@ -91,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                       children: <Widget>[
                         Text(
-                          '180',
+                          sliderHeight.toString(),
                           style: jLabelStyle,
                         ),
                         Text(
@@ -99,6 +100,19 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: kLabelStyle,
                         ),
                       ],
+                    ),
+                    Slider(
+                        value: sliderHeight.toDouble(),
+                        min: 120.0,
+                        max: 220.0,
+                        activeColor: Color(0xFFEB1555),
+                        inactiveColor: Color(0xFF8D8E98),
+                        onChanged: (double newValue){
+                          setState(() {
+                          sliderHeight= newValue.round();
+                          });
+                        }
+
                     ),
                   ],
                 ),
