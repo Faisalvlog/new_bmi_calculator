@@ -82,8 +82,24 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(child:  RepeatContainerCode(
                 colors: Color(0xFF1D1E33),
                 cardwidget: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text("Height",style: kLabelStyle),
+                    Row(
+
+                      mainAxisAlignment: MainAxisAlignment.center,
+
+                      children: <Widget>[
+                        Text(
+                          '180',
+                          style: jLabelStyle,
+                        ),
+                        Text(
+                          'cm',
+                          style: kLabelStyle,
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),

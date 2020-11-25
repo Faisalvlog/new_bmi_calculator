@@ -9,3 +9,8 @@ const kLabelStyle=TextStyle(
 fontSize: 30.0,
 color: Color(0xFF8D8E98),
 );
+
+const jLabelStyle=TextStyle(
+fontSize: 50.0,
+fontWeight: FontWeight.w900,
+);
