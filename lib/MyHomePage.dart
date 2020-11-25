@@ -24,22 +24,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  Color maleColor= deActiveColor;
-  Color femaleColor= deActiveColor;
-
-  void updateColor(Gender gendertype){
-
-    if(gendertype==Gender.male){
-      Color maleColor= activeColor;
-      Color femaleColor= deActiveColor;
-
-    }
-  if(gendertype==Gender.female){
-    Color maleColor= deActiveColor;
-    Color femaleColor= activeColor;
-
-  }
-  }
+ Gender selectGender;
 
   Widget build(BuildContext context){
     return Scaffold(
@@ -48,17 +33,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: <Widget>[
+
           Expanded(child: Row(
             children: <Widget>[
               Expanded(
                 child: GestureDetector(
                   onTap: (){
                     setState(() {
-                      updateColor(Gender.male);
+                     selectGender= Gender.male;
                     });
                   },
                   child:RepeatContainerCode(
-                    colors: maleColor,
+                    colors: selectGender==Gender.male?activeColor:deActiveColor,
                     cardwidget: RepeatTextIconWidget(
                       iconData: FontAwesomeIcons.male,
                       label: 'Male',
@@ -66,15 +52,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
+
               Expanded(
               child: GestureDetector(
               onTap: (){
               setState(() {
-              updateColor(Gender.female);
+              selectGender= Gender.female;
               });
               },
                 child:RepeatContainerCode(
-                colors: femaleColor,
+                colors:  selectGender==Gender.female?activeColor:deActiveColor,
                 cardwidget: RepeatTextIconWidget(
                   iconData: FontAwesomeIcons.female,
                   label: 'Female',
