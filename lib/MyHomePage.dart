@@ -1,12 +1,12 @@
+import 'package:bmicalculator_class_assignment/ConstantFile.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'RepeatContainerCode.dart';
 import 'RepeatTextIconWidget.dart';
+import 'ConstantFile.dart';
 
-const activeColor = Color(0xFF1D1E33);
-const deActiveColor = Color(0xFF1D1E33);
 enum Gender{
    male,
   female,
@@ -29,9 +29,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text("BMI Calculator"),
+        title: Text("BMI CALCULATOR"),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
 
           Expanded(child: Row(
@@ -78,7 +79,14 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Expanded(child: Row(
             children: <Widget>[
-              Expanded(child:  RepeatContainerCode(colors: Color(0xFF1D1E33),),
+              Expanded(child:  RepeatContainerCode(
+                colors: Color(0xFF1D1E33),
+                cardwidget: Column(
+                  children: <Widget>[
+                    Text("Height",style: kLabelStyle),
+                  ],
+                ),
+              ),
               ),
               Expanded(child:  RepeatContainerCode(colors: Color(0xFF1D1E33),),
               ),

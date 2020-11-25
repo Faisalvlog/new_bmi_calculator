@@ -20,7 +20,7 @@ class RepeatContainerCode extends StatelessWidget {
         color: colors,
         borderRadius: BorderRadius.circular(10.0),
       ),
-    );
     ),
+    );
   }
 }

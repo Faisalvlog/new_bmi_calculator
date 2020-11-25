@@ -1,4 +1,6 @@
+import 'package:bmicalculator_class_assignment/ConstantFile.dart';
 import 'package:flutter/cupertino.dart';
+import 'ConstantFile.dart';
 
 class RepeatTextIconWidget extends StatelessWidget {
   RepeatTextIconWidget({@required this.iconData,this.label});
@@ -19,12 +21,11 @@ class RepeatTextIconWidget extends StatelessWidget {
         ),
         Text(
           label,
-          style: TextStyle(
-              fontSize: 30.0,
-              color: Color(0xFF8D8E98)
-          ),),
-      ],
-    );
+          style: kLabelStyle,
+          ),
+        ],
+          );
+
   }
 }
 
