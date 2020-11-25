@@ -7,6 +7,11 @@ import 'RepeatTextIconWidget.dart';
 
 const activeColor = Color(0xFF1D1E33);
 const deActiveColor = Color(0xFF1D1E33);
+enum Gender{
+  male,
+  female,
+}
+
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -22,14 +27,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Color maleColor= deActiveColor;
   Color femaleColor= deActiveColor;
 
-  void updateColor(int gender){
+  void updateColor(Gender gendertype){
 
-    if(gender==1){
+    if(gendertype==Gender.male){
       Color maleColor= activeColor;
       Color femaleColor= deActiveColor;
 
     }
-  if(gender==2){
+  if(gendertype==Gender.female){
     Color maleColor= deActiveColor;
     Color femaleColor= activeColor;
 
@@ -49,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: GestureDetector(
                   onTap: (){
                     setState(() {
-                      updateColor(1);
+                      updateColor(Gender.male);
                     });
                   },
                   child:RepeatContainerCode(
@@ -65,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: GestureDetector(
               onTap: (){
               setState(() {
-              updateColor(2);
+              updateColor(Gender.female);
               });
               },
                 child:RepeatContainerCode(
