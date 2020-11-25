@@ -26,6 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
  Gender selectGender;
  int sliderHeight=180;
+ int sliderweight=60;
 
   Widget build(BuildContext context){
     return Scaffold(
@@ -76,10 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),),
-          Expanded(child: RepeatContainerCode(colors: Color(0xFF1D1E33),),
-          ),
-          Expanded(child: Row(
-            children: <Widget>[
+
               Expanded(child:  RepeatContainerCode(
                 colors: Color(0xFF1D1E33),
                 cardwidget: Column(
@@ -109,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         inactiveColor: Color(0xFF8D8E98),
                         onChanged: (double newValue){
                           setState(() {
-                          sliderHeight= newValue.round();
+                            sliderHeight= newValue.round();
                           });
                         }
 
@@ -118,10 +116,34 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               ),
-              Expanded(child:  RepeatContainerCode(colors: Color(0xFF1D1E33),),
+    Expanded(child: Row(
+    children: <Widget>[
+          Expanded(child: RepeatContainerCode(
+            colors: Color(0xFF1D1E33),
+            cardwidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                    'Weight',
+                  style: kLabelStyle,
+                ),
+                Text(
+                  sliderweight.toString(),
+                  style: jLabelStyle,
+                ),
+
+              ],
+            ),
+          ),
+          ),
+
+              Expanded(child:  RepeatContainerCode(
+                colors: Color(0xFF1D1E33),
+              ),
               ),
             ],
-          ),),
+          ),
+          ),
         ],
       ),
     );
