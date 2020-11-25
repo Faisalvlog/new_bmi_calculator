@@ -15,7 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bmi Calculator"),
+        title: Text("BMI Calculator"),
       ),
       body: Column(
         children: <Widget>[
