@@ -2,6 +2,12 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'RepeatContainerCode.dart';
+import 'RepeatTextIconWidget.dart';
+
+const activeColor = Color(0xFF1D1E33);
+const deActiveColor = Color(0xFF1D1E33);
+
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -12,6 +18,24 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  Color maleColor= deActiveColor;
+  Color femaleColor= deActiveColor;
+
+  void updateColor(int gender){
+
+    if(gender==1){
+      Color maleColor= activeColor;
+      Color femaleColor= deActiveColor;
+
+    }
+  if(gender==2){
+    Color maleColor= deActiveColor;
+    Color femaleColor= activeColor;
+
+  }
+  }
+
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
@@ -22,20 +46,35 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(child: Row(
             children: <Widget>[
               Expanded(
+                child: GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      updateColor(1);
+                    });
+                  },
                   child:RepeatContainerCode(
-                    colors: Color(0xFF1D1E33),
+                    colors: maleColor,
                     cardwidget: RepeatTextIconWidget(
                       iconData: FontAwesomeIcons.male,
                       label: 'Male',
                     ),
                   ),
+                ),
               ),
-              Expanded(child:RepeatContainerCode(
-                colors: Color(0xFF1D1E33),
+              Expanded(
+              child: GestureDetector(
+              onTap: (){
+              setState(() {
+              updateColor(2);
+              });
+              },
+                child:RepeatContainerCode(
+                colors: femaleColor,
                 cardwidget: RepeatTextIconWidget(
                   iconData: FontAwesomeIcons.female,
                   label: 'Female',
                 ),
+              ),
               ),
               ),
             ],
@@ -56,49 +95,3 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class RepeatTextIconWidget extends StatelessWidget {
-  RepeatTextIconWidget({@required this.iconData,this.label});
-final IconData iconData;
-final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Icon(
-          iconData,
-          size: 90.0,
-        ),
-        SizedBox(
-          height: 15.0,
-        ),
-        Text(
-          label,
-          style: TextStyle(
-          fontSize: 30.0,
-          color: Color(0xFF8D8E98)
-        ),),
-      ],
-    );
-  }
-}
-
-class RepeatContainerCode extends StatelessWidget {
-  RepeatContainerCode({@required this.colors, this.cardwidget});
-  final Color colors;
-  final Widget cardwidget;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(15.0),
-      child: cardwidget,
-
-      decoration: BoxDecoration(
-        color: colors,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-    );
-  }
-}
