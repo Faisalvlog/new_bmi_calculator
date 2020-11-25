@@ -131,7 +131,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   sliderweight.toString(),
                   style: jLabelStyle,
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
 
+
+                  ],
+                ),
               ],
             ),
           ),
