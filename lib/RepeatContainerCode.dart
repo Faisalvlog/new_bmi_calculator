@@ -3,13 +3,16 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 
 class RepeatContainerCode extends StatelessWidget {
-  RepeatContainerCode({@required this.colors, this.cardwidget});
+  RepeatContainerCode({@required this.colors, this.cardwidget,this.onPressed});
   final Color colors;
   final Widget cardwidget;
+  final Function onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
       margin: EdgeInsets.all(15.0),
       child: cardwidget,
 
@@ -18,5 +21,6 @@ class RepeatContainerCode extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
       ),
     );
+    ),
   }
 }

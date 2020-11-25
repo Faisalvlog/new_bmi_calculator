@@ -37,36 +37,39 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(child: Row(
             children: <Widget>[
               Expanded(
-                child: GestureDetector(
-                  onTap: (){
+
+                  child:RepeatContainerCode(
+                  onPressed: (){
                     setState(() {
-                     selectGender= Gender.male;
+                      selectGender= Gender.male;
                     });
                   },
-                  child:RepeatContainerCode(
-                    colors: selectGender==Gender.male?activeColor:deActiveColor,
+
+                    colors: selectGender==Gender.male
+                        ?activeColor
+                        :deActiveColor,
                     cardwidget: RepeatTextIconWidget(
                       iconData: FontAwesomeIcons.male,
                       label: 'Male',
                     ),
                   ),
-                ),
               ),
 
               Expanded(
-              child: GestureDetector(
-              onTap: (){
-              setState(() {
-              selectGender= Gender.female;
-              });
-              },
+
                 child:RepeatContainerCode(
-                colors:  selectGender==Gender.female?activeColor:deActiveColor,
+                  onPressed: (){
+                    setState(() {
+                      selectGender= Gender.male;
+                    });
+                  },
+                colors:  selectGender==Gender.female
+                    ?activeColor
+                    :deActiveColor,
                 cardwidget: RepeatTextIconWidget(
                   iconData: FontAwesomeIcons.female,
                   label: 'Female',
                 ),
-              ),
               ),
               ),
             ],
