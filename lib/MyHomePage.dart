@@ -8,7 +8,7 @@ import 'RepeatTextIconWidget.dart';
 const activeColor = Color(0xFF1D1E33);
 const deActiveColor = Color(0xFF1D1E33);
 enum Gender{
-  male,
+   male,
   female,
 }
 
