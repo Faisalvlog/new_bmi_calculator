@@ -19,3 +19,15 @@ const jButtonStyle=TextStyle(
   fontSize: 25.0,
   fontWeight: FontWeight.bold,
 );
+
+
+const jTitleStyle=TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.bold,
+);
+
+const jTextStyle=TextStyle(
+  fontSize: 25.0,
+  fontWeight: FontWeight.bold,
+);
+
