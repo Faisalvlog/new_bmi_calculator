@@ -7,7 +7,12 @@ class ResultScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('BMI Result'),
       ),
-      body: Text('Body Data'),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+
+        ],
+      ),
     );
   }
 }
