@@ -2,7 +2,7 @@ import 'package:bmicalculator_class_assignment/ConstantFile.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'ResultFile.dart';
 import 'RepeatContainerCode.dart';
 import 'RepeatTextIconWidget.dart';
 import 'ConstantFile.dart';
@@ -206,11 +206,22 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
           ),
-          Container(
+
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ResultScreen()));
+            },
+          child: Container(
+            child: Center(
+            child: Text('Calculate',
+              style: jButtonStyle,
+            ),
+            ),
             color: Color(0xFFEB1555),
             margin:EdgeInsets.only(top: 10.0),
             width: double.infinity,
             height: 80.0,
+          ),
           ),
         ],
       ),
