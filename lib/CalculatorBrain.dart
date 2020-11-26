@@ -1,10 +1,12 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
+
 class CalculatorBrain {
 
-  CalculatorBrain(this.height, this.weight);
-  final int height;
-  final int weight;
+  CalculatorBrain({@required this.height, this.weight});
+   int height;
+   int weight;
   double _bmi;
 
 

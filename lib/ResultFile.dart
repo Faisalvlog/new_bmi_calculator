@@ -4,6 +4,17 @@ import 'RepeatContainerCode.dart';
 import 'MyHomePage.dart';
 
 class ResultScreen extends StatelessWidget {
+
+  ResultScreen({
+    @required this.bmiResult,
+    @required this.resultText,
+    @required this.interpretation
+  });
+
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,15 +45,15 @@ class ResultScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Normal',
+                    resultText.toUpperCase(),
                     style: jTextStyle,
                   ),
                   Text(
-                    '18.3',
+                    bmiResult,
                     style: jTitleStyle,
                   ),
                   Text(
-                    'BMI is low , need to work hard',
+                    interpretation,
                     textAlign: TextAlign.center,
                     style: jTextStyle,
                   ),
@@ -74,4 +85,5 @@ class ResultScreen extends StatelessWidget {
       ),
     );
   }
+
 }

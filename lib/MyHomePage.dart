@@ -6,6 +6,7 @@ import 'ResultFile.dart';
 import 'RepeatContainerCode.dart';
 import 'RepeatTextIconWidget.dart';
 import 'ConstantFile.dart';
+import 'CalculatorBrain.dart';
 
 enum Gender{
    male,
@@ -209,7 +210,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
           GestureDetector(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>ResultScreen()));
+
+              CalculatorBrain calc= CalculatorBrain(
+                height: sliderHeight,
+                weight: sliderweight
+              );
+
+              Navigator.push(context,
+                  MaterialPageRoute(builder:
+                      (context)=>ResultScreen(
+                        resultText: calc.calculateBMI(),
+                        bmiResult: calc.getResult(),
+                        interpretation: calc.getInterpretation(),
+                      )));
             },
           child: Container(
             child: Center(
