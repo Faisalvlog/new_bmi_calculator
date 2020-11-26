@@ -53,11 +53,12 @@ class ResultScreen extends StatelessWidget {
           Expanded(
             child:   GestureDetector(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>ResultScreen()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=>MyHomePage()));
               },
               child: Container(
                 child: Center(
-                  child: Text('Calculate',
+                  child: Text('ReCalculate',
                     style: jButtonStyle,
                   ),
                 ),
