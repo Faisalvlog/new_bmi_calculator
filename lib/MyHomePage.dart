@@ -27,6 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
  Gender selectGender;
  int sliderHeight=180;
  int sliderweight=60;
+ int sliderAge=20;
 
   Widget build(BuildContext context){
     return Scaffold(
@@ -37,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
 
-          Expanded(child: Row(
+             Expanded(child: Row(
             children: <Widget>[
               Expanded(
 
@@ -116,39 +117,100 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               ),
-    Expanded(child: Row(
-    children: <Widget>[
-          Expanded(child: RepeatContainerCode(
-            colors: Color(0xFF1D1E33),
-            cardwidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              Expanded(child: Row(
               children: <Widget>[
-                Text(
-                    'Weight',
-                  style: kLabelStyle,
-                ),
-                Text(
-                  sliderweight.toString(),
-                  style: jLabelStyle,
-                ),
-                Row(
+              Expanded(child: RepeatContainerCode(
+                colors: Color(0xFF1D1E33),
+                cardwidget: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
+                    Text(
+                        'Weight',
+                      style: kLabelStyle,
+                    ),
+                    Text(
+                      sliderweight.toString(),
+                      style: jLabelStyle,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                          RoundIcon(
+                            iconData: FontAwesomeIcons.minus,
+                            onPress: (){
+                              setState(() {
+                                sliderweight--;
+                              });
+                            },
+                          ),
+                        SizedBox(width: 10.0,),
+                        RoundIcon(
 
+                            iconData: FontAwesomeIcons.minus,
+                            onPress: (){
+                              setState(() {
+                                sliderweight++;
+                              });
+                            },
+                          ),
 
+                      ],
+                    ),
                   ],
                 ),
-              ],
-            ),
-          ),
-          ),
+              ),
+              ),
 
               Expanded(child:  RepeatContainerCode(
                 colors: Color(0xFF1D1E33),
+                cardwidget: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'Age',
+                      style: kLabelStyle,
+                    ),
+                    Text(
+                      sliderAge.toString(),
+                      style: jLabelStyle,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        RoundIcon(
+                          iconData: FontAwesomeIcons.minus,
+                          onPress: (){
+                            setState(() {
+                              sliderAge--;
+                            });
+                          },
+                        ),
+                        SizedBox(width: 10.0,),
+                        RoundIcon(
+
+                          iconData: FontAwesomeIcons.minus,
+                          onPress: (){
+                            setState(() {
+                              sliderAge++;
+                            });
+                          },
+                        ),
+
+                      ],
+                    ),
+                  ],
+                ),
               ),
+
               ),
             ],
           ),
+          ),
+          Container(
+            color: Color(0xFFEB1555),
+            margin:EdgeInsets.only(top: 10.0),
+            width: double.infinity,
+            height: 80.0,
           ),
         ],
       ),
@@ -163,7 +225,15 @@ class RoundIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-
+      child: Icon(iconData),
+      onPressed: onPress,
+      elevation: 6.0,
+      constraints: BoxConstraints.tightFor(
+        height: 56.0,
+        width: 56.0,
+      ),
+      shape: CircleBorder(),
+      fillColor: Color(0xFF4C4F5E),
     );
   }
 }
