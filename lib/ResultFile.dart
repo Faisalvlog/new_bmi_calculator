@@ -30,7 +30,7 @@ class ResultScreen extends StatelessWidget {
             child: Container(
               child: Center(
                 child: Text(
-                  'Your Result',
+                    'YOUR RESULT',
                   style: jTitleStyle,
                 ),
               ),
@@ -46,6 +46,7 @@ class ResultScreen extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     resultText.toUpperCase(),
+
                     style: jTextStyle,
                   ),
                   Text(
@@ -69,7 +70,7 @@ class ResultScreen extends StatelessWidget {
               },
               child: Container(
                 child: Center(
-                  child: Text('ReCalculate',
+                  child: Text('RE-CALCULATE',
                     style: jButtonStyle,
                   ),
                 ),
